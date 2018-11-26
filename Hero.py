@@ -1,5 +1,4 @@
 import pygame
-from Arrow import Arrow
 
 class Hero(object):
     def __init__(self):
