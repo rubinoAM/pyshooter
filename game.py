@@ -60,7 +60,7 @@ while game_on:
                 hero.go_move("up", False)
 
     screen.blit(background_image,[0,0])
-    hero.draw_me()
+    hero.draw_me(800,600)
     bad_guy.update_me(hero)
     vampire.update_me(hero)
 
@@ -69,6 +69,9 @@ while game_on:
         screen.blit(arrow_image,[arrow.x,arrow.y])
 
     arrow_hit = groupcollide(arrows,bad_guys,True,True)
+
+    if arrow_hit:
+        bad_guys.add(BadGuy())
 
     for bad_guy in bad_guys:
         bad_guy.update_me(hero)
