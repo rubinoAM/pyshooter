@@ -2,6 +2,7 @@ import pygame
 from Hero import Hero
 from Arrow import Arrow
 from BadGuy import BadGuy
+from Vampire import Vampire
 from pygame.sprite import Group, groupcollide
 
 # Always needs to be initialized
@@ -23,6 +24,7 @@ hero = Hero()
 bad_guy = BadGuy()
 bad_guys = Group()
 bad_guys.add(bad_guy)
+vampire = Vampire()
 arrows = Group()
 
 pygame.mixer.music.load('bleepsgalore.mp3')
@@ -60,6 +62,7 @@ while game_on:
     screen.blit(background_image,[0,0])
     hero.draw_me()
     bad_guy.update_me(hero)
+    vampire.update_me(hero)
 
     for arrow in arrows:
         arrow.update_me()
@@ -72,5 +75,5 @@ while game_on:
         screen.blit(monster_image,[bad_guy.x,bad_guy.y])
 
     screen.blit(hero_image,[hero.x, hero.y])
-    screen.blit(goblin_image,[100,224])
+    screen.blit(goblin_image,[vampire.x,vampire.y])
     pygame.display.flip()
