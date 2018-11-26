@@ -18,12 +18,16 @@ class Hero(object):
             self.should_move_up = start
         if direction == 'down':
             self.should_move_down = start
-    def draw_me(self):
+    def draw_me(self,w,h):
         if(self.should_move_right):
-            self.x += self.speed
+            if(self.x <= w - 24):
+                self.x += self.speed
         elif(self.should_move_left):
-            self.x -= self.speed
+            if(self.x >= 0):
+                self.x -= self.speed
         if(self.should_move_up):
-            self.y += self.speed
+            if(self.y <= h - 24):
+                self.y += self.speed
         elif(self.should_move_down):
-            self.y -= self.speed
+            if(self.y >= 0):
+                self.y -= self.speed
