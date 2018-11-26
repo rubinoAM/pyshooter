@@ -25,8 +25,8 @@ bad_guys = Group()
 bad_guys.add(bad_guy)
 arrows = Group()
 
-bg_music = pygame.mixer.Sound('bg.wav')
-bg_music.play()
+pygame.mixer.music.load('bleepsgalore.mp3')
+pygame.mixer.music.play(-1)
 
 # Main Game
 
